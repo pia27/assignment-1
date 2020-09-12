@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Website</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+
+<h1>Hi!! I am APALA MITRA</h1>
+<h1>B.TECH IN INFORMATION TECHNOLOGY</h1>
+
+<hr>
+
+<img src="APALA.jpg" width="100" photo aria-posinset="center" height="200" border="7">
+
+<div id="myBtnContainer">
+  <button class="btn" onclick="filterSelection('ABOUT')"> ABOUT</button>
+  <button class="btn" onclick="filterSelection('CONTACTS')"> CONTACTS</button>
+  <button class="btn active" onclick="filterSelection('all')"> SHOW ALL</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column ABOUT">
+    <div class="content">
+      <alt="Nature" style="width:100%">
+      <h4>EDUCATION</h4>
+      <p>Completed Madhyamik with 77.57% from Kandi Raja M.C Girls High School</p>
+      <p>Completed HS with 71% from Kandi Raja M.C Girls High School</p>
+    </div>
+  </div>
+  <div class="column ABOUT">
+    <div class="content">
+    <alt="Nature" style="width:100%">
+      <h4>HOBBY</h4>
+      <p>Cooking, Playing Badminton,Singing,,Designing,     Travelling</p>
+    </div>
+  </div>
+  
+  <div class="column ABOUT">
+    <div class="content">
+    <alt="Nature" style="width:100%">
+      <h4>AREA OF SPECIAL INTEREST</h4>
+      <p>C++ and Java Coding, Web Development,Data Structure and algorithm using C,DBMS</p> 
+    </div>
+  </div><div class="column ABOUT">
+    <div class="content">
+    <alt="Nature" style="width:100%">
+      <h4>ACHIEVEMENT AND AWARDS</h4>
+      <p>Got seleced as brand ambassador by IMUN</p>
+      <p>Participate in Hackathon 2020</p>
+      <p>Winner of Badmintoirls Girls</p>
+      <p>2nd in Singing Competition</p>
+      <p>1st in Drawing Competition</p>
+      </div>
+      </div>
+
+  
+  <div class="column CONTACTS">
+    <div class="content">
+      <alt="Car" style="width:100%">
+      <h4>CONTACTS</h4>
+      <p>Email-apalamitra20@gmail.com</p>
+      <p>Phone No-8436220356</p>
+      <p>Others Account- Linked in</p>
+                      <p>Instagram</p>
+                       <p>Facebook</p>
+    </div>
+  </div>
+ 
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w1RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w1AddClass(x[i], "show");
+  }
+}
+
+function w1AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w1RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var buttonContainer = document.getElementById("myButtonContainer");
+var buttons = buttonsContainer.getElementsByClassName("button");
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
